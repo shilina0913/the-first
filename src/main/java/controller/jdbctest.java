@@ -1,9 +1,10 @@
 package controller;
 
-import java.beans.Statement;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.sql.DataSource;
 
@@ -21,9 +22,9 @@ public class jdbctest {
 		 
 		  Connection connection=dataSource.getConnection(); 
 		 
-		  Statement stm=(Statement) connection.createStatement();   
+		  Statement stm=connection.createStatement();
 		 
-		  ResultSet rs=((java.sql.Statement) stm).executeQuery(sql); 
+		  ResultSet rs=stm.executeQuery(sql); 
 		 
 		    while(rs.next())    
 		 
